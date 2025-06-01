@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>Listagem de Livros - JSF</title>
+</h:head>
+<h:body>
+    <h1>Listagem de Livros (JSF)</h1>
+
+    <h:dataTable value="#{livroBean.livros}" var="livro" border="1">
+        <h:column>
+            <f:facet name="header">Título</f:facet>
+            #{livro.titulo}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Autor</f:facet>
+            #{livro.autor}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Ano</f:facet>
+            #{livro.ano}
+        </h:column>
+        <h:column>
+            <f:facet name="header">ISBN</f:facet>
+            #{livro.isbn}
+        </h:column>
+    </h:dataTable>
+
+    <br/>
+    <h:link value="Voltar para cadastro" outcome="cadastro.xhtml" />
+</h:body>
+</html>
